@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent.git",
         "state": {
           "branch": null,
-          "revision": "ba8bd2fb3c09cd6e9e2e75eb8cf7c3968d123fb9",
-          "version": "3.0.0-rc.3.0.1"
+          "revision": "04c44c636a5f4ab6a81e47db762a32adf25c1cf8",
+          "version": "3.0.0-rc.3.0.3"
         }
       },
       {
