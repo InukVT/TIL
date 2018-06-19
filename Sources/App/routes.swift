@@ -8,7 +8,6 @@ public func routes(_ router: Router) throws {
             .flatMap(to: Acronym.self)
             { acronym in
                 return acronym.save(on:req)
-                
         }
     }
 }
