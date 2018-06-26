@@ -1,5 +1,6 @@
 import FluentPostgreSQL
 import Vapor
+import Authentication
 
 public func configure(
     _ config: inout Config,
@@ -32,7 +33,17 @@ public func configure(
     services.register(databases)
     
     var migrations = MigrationConfig()
-    // 4
+	migrations.add(model: User.self, database: .psql)
     migrations.add(model: Acronym.self, database: .psql)
+	migrations.add(model: Redirect.self, database: .psql)
+	migrations.add(model: Token.self, database: .psql)
+
     services.register(migrations)
+	
+	var commandConfig = CommandConfig.default()
+	commandConfig.use(RevertCommand.self, as: "revert")
+	services.register(commandConfig)
+	
+	try services.register(AuthenticationProvider())
+	
 }
